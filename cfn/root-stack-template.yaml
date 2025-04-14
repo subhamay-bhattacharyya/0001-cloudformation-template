@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template to create an S3 bucket with encryption and parameterized tags
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Name of the S3 bucket
+    MinLength: 3
+    MaxLength: 63
+    AllowedPattern: '^[a-z0-9.-]+$'
+    ConstraintDescription: Must be a valid S3 bucket name (lowercase letters, numbers, hyphens, periods).
+    Default: subhamay-github-action-bucket-162432
+
+  EncryptionType:
+    Type: String
+    Description: Type of encryption to apply to the S3 bucket
+    AllowedValues:
+      - AES256
+      - aws:kms
+    Default: AES256
+    ConstraintDescription: Must be either AES256 or aws:kms
+
+  Environment:
+    Type: String
+    Description: Deployment environment (e.g., dev, staging, prod)
+    Default: devl
+
+  ProjectName:
+    Type: String
+    Description: Name of the project the bucket is associated with
+    Default: GitHubAction
+
+  CiBuild:
+    Type: String
+    Description: "CiBuild Identifier."
+    Default: ""
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${BucketName}-1-${CiBuild}"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: !Ref EncryptionType
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: ProjectName
+          Value: !Ref ProjectName
+
+Outputs:
+  BucketName:
+    Description: The name of the created S3 bucket
+    Value: !Ref S3Bucket
