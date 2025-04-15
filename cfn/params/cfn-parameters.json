@@ -7,21 +7,21 @@
         "devl": [
             {
                 "Environment": "devl",
-                "BucketName": "subhamay-github-action-bucket-h23y2te",
+                "BucketName": "subhamay-github-action-bucket-j6586g",
                 "EncryptionType": "AES256"
             }
         ],
         "test": [
             {
                 "Environment": "test",
-                "BucketName": "subhamay-github-action-bucket-h23y2te",
+                "BucketName": "subhamay-github-action-bucket-j6586g",
                 "EncryptionType": "AES256"
             }
         ],
         "prod": [
             {
                 "Environment": "prod",
-                "BucketName": "subhamay-github-action-bucket-2837gf6",
+                "BucketName": "subhamay-github-action-bucket-j6586g",
                 "EncryptionType": "AES256"
             }
         ]
