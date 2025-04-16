@@ -40,7 +40,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub "${BucketName}-${CiBuild}"
+      BucketName: !Sub "${BucketName}${CiBuild}"
       BucketEncryption:
         ServerSideEncryptionConfiguration:
           - ServerSideEncryptionByDefault:
