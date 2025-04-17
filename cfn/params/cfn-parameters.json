@@ -7,7 +7,7 @@
         "devl": [
             {
                 "Environment": "devl",
-                "BucketName": "subhamay-github-action-bucket-06611-4567",
+                "BucketName": "subhamay-github-action-bucket-06611-1111",
                 "EncryptionType": "AES256"
             }
         ],
