@@ -28,7 +28,6 @@ jobs:
     with:
       cfn-template-file: root-stack-template.yaml
       cfn-params-file: ./cfn/params/cfn-parameters.json
-      snyk-token: ${{ secrets.SNYK_TOKEN }}
       environment: "ci"
     secrets:
       aws-role-arn: ${{ secrets.AWS_ROLE_ARN }}
