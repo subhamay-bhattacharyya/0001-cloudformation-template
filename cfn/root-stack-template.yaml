@@ -46,7 +46,7 @@ Resources:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: !Ref EncryptionType
       VersioningConfiguration: 
-        Status: Enabled
+        Status: Suspended
       Tags:
         - Key: Environment
           Value: !Ref Environment
