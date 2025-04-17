@@ -25,9 +25,9 @@ jobs:
   cloudformation-ci:
     name: CI
     uses: subhamay-bhattacharyya-gha/cfn-ci-reusable-wf/.github/workflows/ci.yaml@feature/SB-0001-initial-release
-    with:
-      cfn-template-file: root-stack-template.yaml
-      cfn-params-file: ./cfn/params/cfn-parameters.json
-      environment: "ci"
-    secrets:
-      aws-role-arn: ${{ secrets.AWS_ROLE_ARN }}
+    # with:
+    #   cfn-template-file: root-stack-template.yaml
+    #   cfn-params-file: ./cfn/params/cfn-parameters.json
+    #   environment: "ci"
+    # secrets:
+    #   aws-role-arn: ${{ secrets.AWS_ROLE_ARN }}
