@@ -29,5 +29,5 @@ jobs:
       cfn-template-file: root-stack-template.yaml
     #   cfn-params-file: ./cfn/params/cfn-parameters.json
       environment: "ci"
-    # secrets:
-    #   aws-role-arn: ${{ secrets.AWS_ROLE_ARN }}
+    secrets:
+      aws-role-arn: ${{ secrets.AWS_ROLE_ARN }}
